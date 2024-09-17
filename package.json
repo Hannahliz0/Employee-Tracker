@@ -1,0 +1,21 @@
+{
+    "name": "postgres-scripts",
+    "version": "1.0.0",
+    "description": "Scripts to help spin postgres containers",
+    "main": "index.js",
+    "scripts": {
+        "pg-down": "docker compose -f postgres.yml down -v",
+        "pg-stop": "docker compose -f postgres.yml stop -v",
+        "pg-start": "docker compose -f postgres.yml start -v",
+        "pg-up": "docker compose -f postgres.yml up -d",
+        "pg-reset": "npm run pg-down && npm run pg-up",
+        "pg": "psql --host=localhost --port=5432 --username=postgres --password"
+    },
+    "author": "Hannah Schmidt",
+    "license": "MIT",
+    "dependencies": {
+        "fs": "^0.0.1-security",
+        "inquirer": "^11.0.2",
+        "pg": "^8.13.0"
+    }
+}
